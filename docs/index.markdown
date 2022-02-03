@@ -4,3 +4,15 @@
 
 layout: home
 ---
+
+Whoo. Hi there.
+
+```python
+def write_subsamples(self):
+    n = 0
+    for subsample in self.get_random_subsamples():
+        n += 1
+        with open('%s_%i' % (self.args.prefix, n), 'w') as f:
+            f.write(''.join(subsample))
+```
+
