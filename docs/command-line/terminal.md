@@ -6,6 +6,18 @@ nav_order: 2
 ---
 
 # The Terminal
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+- - -
 
 ## Yakuake
 
@@ -26,6 +38,47 @@ The important thing here is that **I can open and close my terminal with the
 press of a single key, no matter what I'm currently doing on my system.**  I've
 found that super convenient.
 
+- - -
+
+## Emoji support
+
+Does your terminal correctly render Unicode emoji?
+
+```bash
+echo "Emoji time!" 👍 🍎 🐜 🐻 🥖 🚌
+```
+
+In principle, if you're working in a graphical desktop environment, there's no
+reason why it shouldn't, but you might have to tweak your system's font
+configuration. Make sure you have [Noto Emoji
+fonts](https://github.com/googlefonts/noto-emoji) installed (of course you can
+also choose any other emoji font, like [JoyPixels](https://www.joypixels.com/)),
+then create a file named `~/.config/fontconfig/conf.d/99-color-emoji.conf` with
+the following contents:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Noto Color Emoji</family>
+    </prefer>
+  </alias>
+</fontconfig>
+```
+
+Then, run `fc-cache -f` to rebuild your font cache. Finally, restart your
+terminal application.
+
+If that didn't do the trick, you could refer to [Victor Kropp's
+blogpost](https://victor.kropp.name/blog/emoji-on-linux/) or [this GitHub
+gist](https://gist.github.com/IgnoredAmbience/7c99b6cf9a8b73c9312a71d1209d9bbb)
+for slight variations on the same idea.
+
+- - -
+
 ## tmux / byobu
 
 Especially when working on remote machines (e.g. via SSH), you want a way to
@@ -37,7 +90,3 @@ tmux to provide an ever nicer user experience.
 
 I need to use these tools more before I can give any practical tips here,
 though.
-
-## Emoji support
-
-TODO

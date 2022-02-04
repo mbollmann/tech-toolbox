@@ -6,8 +6,20 @@ nav_order: 3
 ---
 
 # The Shell
+{: .no_toc }
 
-## fish
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+- - -
+
+## fish (Shell)
 
 The default shell on most Linux systems is the [Bash
 shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), and you can't go wrong
@@ -29,17 +41,20 @@ PLACEHOLDER
 There's one potential downside, which is that fish is not POSIX-compatible,
 meaning that if you're used to Bash syntax, you might have to relearn a few
 things.  In practice, I've never found this to be a huge issue.  Some common
-differences that you quickly to get used to are:
+differences that I quickly got used to are:
 
 1. Slightly different keywords for loops and conditions:
-   - `for ...; do_something; end` _(fish)_
-   - `for ...; do do_something; done` _(bash)_
+   - <code class="highlight language-fish" data-lang="fish"><span class="k">for</span> f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">end</span></code> _(fish)_
+   <!-- - {% ihighlight fish %} for f in *.pdf; pdfinfo $f; end {% endihighlight %} _(fish)_ -->
+   - {% ihighlight bash %} for f in *.pdf; do pdfinfo $f; done {% endihighlight %} _(bash)_
 2. Command substitutions without a dollar sign:
-   - `echo (command)` _(fish)_
-   - `echo $(command)` _(bash)_
+   - <code class="highlight language-fish" data-lang="fish"><span class="nb">echo</span> <span class="si">(</span>somecommand<span class="si">)</span></code> _(fish)_
+   <!-- - `echo (somecommand)` _(fish)_ -->
+   - {% ihighlight bash %} echo $(somecommand) {% endihighlight %} _(bash)_
 3. Declaring variables:
-   - `set foo "bar"` _(fish)_
-   - `foo="bar"` _(bash)_
+   - <code class="highlight language-fish" data-lang="fish"><span class="k">set</span> <span class="nv">foo</span> <span class="s2">"bar"</span></code> _(fish)_
+   <!-- - `set foo "bar"` _(fish)_ -->
+   - {% ihighlight bash %} foo="bar" {% endihighlight %} _(bash)_
 
 The fish documentation has [a comprehensive overview of the differences to Bash
 syntax](https://fishshell.com/docs/current/fish_for_bash_users.html), but also,
@@ -47,6 +62,8 @@ remember that even if you set fish as your default shell, Bash is still there
 for you—you can still write & run Bash scripts if that's what you're more
 comfortable with for a given task.  The syntactic differences are mostly
 relevant for writing quick one-liners directly on the command line.
+
+- - -
 
 ## fzf (Shell extension)
 
@@ -70,6 +87,8 @@ interactive search, and if you find the command you were looking for, pressing
 _(Note that fzf also [comes with built-in support for Bash
 users](https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh), but I
 haven't tried that.)_
+
+- - -
 
 ## Starship (Prompt)
 
