@@ -45,16 +45,13 @@ differences that I quickly got used to are:
 
 1. Slightly different keywords for loops and conditions:
    - <code class="highlight language-fish" data-lang="fish"><span class="k">for</span> f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">end</span></code> _(fish)_
-   <!-- - {% ihighlight fish %} for f in *.pdf; pdfinfo $f; end {% endihighlight %} _(fish)_ -->
-   - {% ihighlight bash %} for f in *.pdf; do pdfinfo $f; done {% endihighlight %} _(bash)_
+   - <code class="highlight language-bash" data-lang="bash"><span class="k">for </span>f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> <span class="k">do </span>pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">done</span></code> _(bash)_
 2. Command substitutions without a dollar sign:
    - <code class="highlight language-fish" data-lang="fish"><span class="nb">echo</span> <span class="si">(</span>somecommand<span class="si">)</span></code> _(fish)_
-   <!-- - `echo (somecommand)` _(fish)_ -->
-   - {% ihighlight bash %} echo $(somecommand) {% endihighlight %} _(bash)_
+   - <code class="highlight language-bash" data-lang="bash"><span class="nb">echo</span> <span class="si">$(</span>somecommand<span class="si">)</span></code> _(bash)_
 3. Declaring variables:
    - <code class="highlight language-fish" data-lang="fish"><span class="k">set</span> <span class="nv">foo</span> <span class="s2">"bar"</span></code> _(fish)_
-   <!-- - `set foo "bar"` _(fish)_ -->
-   - {% ihighlight bash %} foo="bar" {% endihighlight %} _(bash)_
+   - <code class="highlight language-bash" data-lang="bash"><span class="nv">foo</span><span class="o">=</span><span class="s2">"bar"</span></code> _(bash)_
 
 The fish documentation has [a comprehensive overview of the differences to Bash
 syntax](https://fishshell.com/docs/current/fish_for_bash_users.html), but also,
