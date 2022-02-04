@@ -11,7 +11,7 @@ github_username:  mbollmann
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
-theme: just-the-docs
+#theme: just-the-docs  # Uncomment this when testing locally _only_
 
 color_scheme: docsy
 
