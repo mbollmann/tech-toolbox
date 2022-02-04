@@ -44,14 +44,14 @@ things.  In practice, I've never found this to be a huge issue.  Some common
 differences that I quickly got used to are:
 
 1. Slightly different keywords for loops and conditions:
-   - <code class="highlight language-fish" data-lang="fish"><span class="k">for</span> f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">end</span></code> _(fish)_
-   - <code class="highlight language-bash" data-lang="bash"><span class="k">for </span>f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> <span class="k">do </span>pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">done</span></code> _(bash)_
+   - <span class="d-inline-block" style="min-width:2.8em;">fish:</span><code class="highlight language-fish" data-lang="fish"><span class="k">for</span> f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">end</span></code>
+   - <span class="d-inline-block" style="min-width:2.8em;">bash:</span><code class="highlight language-bash" data-lang="bash"><span class="k">for </span>f <span class="k">in</span> <span class="k">*</span>.pdf<span class="p">;</span> <span class="k">do </span>pdfinfo <span class="nv">$f</span><span class="p">;</span> <span class="k">done</span></code>
 2. Command substitutions without a dollar sign:
-   - <code class="highlight language-fish" data-lang="fish"><span class="nb">echo</span> <span class="si">(</span>somecommand<span class="si">)</span></code> _(fish)_
-   - <code class="highlight language-bash" data-lang="bash"><span class="nb">echo</span> <span class="si">$(</span>somecommand<span class="si">)</span></code> _(bash)_
+   - <span class="d-inline-block" style="min-width:2.8em;">fish:</span><code class="highlight language-fish" data-lang="fish"><span class="nb">echo</span> <span class="si">(</span>somecommand<span class="si">)</span></code>
+   - <span class="d-inline-block" style="min-width:2.8em;">bash:</span><code class="highlight language-bash" data-lang="bash"><span class="nb">echo</span> <span class="si">$(</span>somecommand<span class="si">)</span></code>
 3. Declaring variables:
-   - <code class="highlight language-fish" data-lang="fish"><span class="k">set</span> <span class="nv">foo</span> <span class="s2">"bar"</span></code> _(fish)_
-   - <code class="highlight language-bash" data-lang="bash"><span class="nv">foo</span><span class="o">=</span><span class="s2">"bar"</span></code> _(bash)_
+   - <span class="d-inline-block" style="min-width:2.8em;">fish:</span><code class="highlight language-fish" data-lang="fish"><span class="k">set</span> <span class="nv">foo</span> <span class="s2">"bar"</span></code>
+   - <span class="d-inline-block" style="min-width:2.8em;">bash:</span><code class="highlight language-bash" data-lang="bash"><span class="nv">foo</span><span class="o">=</span><span class="s2">"bar"</span></code>
 
 The fish documentation has [a comprehensive overview of the differences to Bash
 syntax](https://fishshell.com/docs/current/fish_for_bash_users.html), but also,
@@ -64,10 +64,12 @@ relevant for writing quick one-liners directly on the command line.
 
 ## fzf (Shell extension)
 
-One bonus of fish is its easy extensibility.  [**fzf** ("fuzzy
-finder")](https://github.com/junegunn/fzf) is a command-line tool for finding
-things, but also works as an [awesome fish
-extension](https://github.com/jethrokuan/fzf).
+[**fzf** ("fuzzy finder")](https://github.com/junegunn/fzf) is a command-line
+tool for finding things, but also works as an [awesome fish
+extension](https://github.com/jethrokuan/fzf).  It also [comes with built-in
+support for bash and
+zsh](https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh), though
+I haven't tried that.
 
 Want to `cd` into some deeply nested directory like
 `~/Documents/Courses/Intro_to_programming_2021/assignments/week3/`?  That's a
@@ -81,12 +83,28 @@ also `grep` through your history file, but with fzf's `<Ctrl-R>` you get fuzzy,
 interactive search, and if you find the command you were looking for, pressing
 `<Enter>` on it will paste it directly onto your command line.
 
-_(Note that fzf also [comes with built-in support for Bash
-users](https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh), but I
-haven't tried that.)_
-
 - - -
 
 ## Starship (Prompt)
 
-TODO
+I used to add a lot of customizations to my shell prompt, but
+[**Starship**](https://starship.rs/) has made the process a whole lot quicker
+and more enjoyable. It also works on top of _any shell._ By default, it will
+give you a two-line prompt that includes information about Git branches and
+states, as well as version information of any programming languages relevant for
+your current directory:
+
+PLACEHOLDER
+
+You can [configure its appearance in detail](https://starship.rs/config/)
+(including a more compact one-line format, if that's what you prefer), which I
+have of course [done quite extensively
+myself](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/starship.toml),
+so my own prompt looks like this nowadays:
+
+PLACEHOLDER
+
+The only prerequisite for using Starship is that you configure your terminal
+application to use a [Nerd font](https://www.nerdfonts.com/), which are
+essentially just fancy extensions for many popular monospace fonts, adding
+glyphs from many popular icon fonts.
