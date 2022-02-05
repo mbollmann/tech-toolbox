@@ -36,7 +36,8 @@ completions.  Syntax highlighting will furthermore tell you if a command exists
 & is executable, if a given file path is valid, or if you forgot the closing
 quotes on a string, _all before you ever press "Enter"._
 
-PLACEHOLDER
+![Entering a little, silly command into fish](../images/fish.gif)
+{: .text-center}
 
 There's one potential downside, which is that fish is not POSIX-compatible,
 meaning that if you're used to Bash syntax, you might have to relearn a few
@@ -76,6 +77,9 @@ Want to `cd` into some deeply nested directory like
 lot of keys to press, even with the help of tab completions.  How about just
 typing `<Alt-C> week3 <Enter>`?
 
+![Quickly cd-ing into a deeply nested directory with fzf](../images/fzf-altc.gif)
+{: .text-center}
+
 What was that long one-liner you used a few months ago, of which you remember
 nothing except that one of its arguments was a file named `plot.pdf`?  How about
 just typing `<Ctrl-R> plot.pdf` and seeing what comes up?  Of course, you could
@@ -92,9 +96,7 @@ I used to add a lot of customizations to my shell prompt, but
 and more enjoyable. It also works on top of _any shell._ By default, it will
 give you a two-line prompt that includes information about Git branches and
 states, as well as version information of any programming languages relevant for
-your current directory:
-
-PLACEHOLDER
+your current directory.
 
 You can [configure its appearance in detail](https://starship.rs/config/)
 (including a more compact one-line format, if that's what you prefer), which I
@@ -102,9 +104,13 @@ have of course [done quite extensively
 myself](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/starship.toml),
 so my own prompt looks like this nowadays:
 
-PLACEHOLDER
+![Demonstrating my customized Starship prompt](../images/starship.gif)
+{: .text-center}
 
 The only prerequisite for using Starship is that you configure your terminal
 application to use a [Nerd font](https://www.nerdfonts.com/), which are
 essentially just fancy extensions for many popular monospace fonts, adding
-glyphs from many popular icon fonts.
+glyphs from many popular icon fonts. I use
+[Hack](https://www.programmingfonts.org/#hack) at the moment, but you have a lot
+of great choices here.
+
