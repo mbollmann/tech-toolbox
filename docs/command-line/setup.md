@@ -1,11 +1,11 @@
 ---
-title: Shell
+title: My Command Line Setup
 parent: Working on the Command Line
 layout: default
-nav_order: 3
+nav_order: 2
 ---
 
-# The Shell
+# My Command Line Setup
 {: .no_toc }
 
 <details open markdown="block">
@@ -19,7 +19,81 @@ nav_order: 3
 
 - - -
 
-## fish (Shell)
+## The terminal: Yakuake
+
+A terminal emulator is the program that provides access to the command line, and
+I've stuck with [**Yakuake**](https://apps.kde.org/yakuake/), a KDE-based drop-down
+terminal, for many many years now.  I like the drop-down style of quickly
+rolling the terminal down and up again, but the most important feature for me is
+this:
+
+I've made the `<F1>` key into a global shortcut for opening & closing my terminal.
+{: .callout .callout-primary}
+
+You can use other keys for that purpose, but I've never found that `<F1>`
+conflicted with any function that I cared about in another program—typically it
+is reserved for showing "help" screens.  You can also set this up with any other
+terminal emulator, though Yakuake offers this functionality right out of the box.
+The important thing here is that **I can open and close my terminal with the
+press of a single key, no matter what I'm currently doing on my system.**  I've
+found that super convenient.
+
+- - -
+
+### Emoji support
+
+Does your terminal correctly render Unicode emoji?
+
+```bash
+echo "Emoji time!" 👍 🍎 🐜 🐻 🥖 🚌
+```
+
+In principle, if you're working in a graphical desktop environment, there's no
+reason why it shouldn't, but you might have to tweak your system's font
+configuration. Make sure you have [Noto Emoji
+fonts](https://github.com/googlefonts/noto-emoji) installed (of course you can
+also choose any other emoji font, like [JoyPixels](https://www.joypixels.com/)),
+then create a file named `~/.config/fontconfig/conf.d/99-color-emoji.conf` with
+the following contents:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Noto Color Emoji</family>
+    </prefer>
+  </alias>
+</fontconfig>
+```
+
+Then, run `fc-cache -f` to rebuild your font cache. Finally, restart your
+terminal application.
+
+If that didn't do the trick, you could refer to [Victor Kropp's
+blogpost](https://victor.kropp.name/blog/emoji-on-linux/) or [this GitHub
+gist](https://gist.github.com/IgnoredAmbience/7c99b6cf9a8b73c9312a71d1209d9bbb)
+for slight variations on the same idea.
+
+- - -
+
+### Multiplexer and workspaces
+
+For me, using a terminal multiplexer is mainly useful for **preserving remote
+shell sessions**, i.e., keeping sessions and programs within it running when
+logged in via SSH, but it can also be a great tool for better organizing your
+terminal workspace.
+
+The classic option here is
+[**tmux**](https://www.howtogeek.com/671422/how-to-use-tmux-on-linux-and-why-its-better-than-screen/). A
+more modern alternative that's supposed to give a nicer user experience is
+[**byobu**](https://www.byobu.org/). Currently, I'm trying out
+[**zellij**](https://zellij.dev/), which primarily calls itself a "terminal
+workspace" but has some tmux-like functionalities (like detaching a session).
+
+### The shell: fish
 
 The default shell on most Linux systems is the [Bash
 shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), and you can't go wrong
@@ -63,7 +137,7 @@ relevant for writing quick one-liners directly on the command line.
 
 - - -
 
-## fzf (Shell extension)
+### fzf (search extension)
 
 [**fzf** ("fuzzy finder")](https://github.com/junegunn/fzf) is a command-line
 tool for finding things, but also works as an [awesome fish
@@ -89,7 +163,7 @@ interactive search, and if you find the command you were looking for, pressing
 
 - - -
 
-## Starship (Prompt)
+### Starship (prompt)
 
 I used to add a lot of customizations to my shell prompt, but
 [**Starship**](https://starship.rs/) has made the process a whole lot quicker
