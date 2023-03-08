@@ -1,8 +1,8 @@
 ---
 title: My Command Line Setup
-parent: Working on the Command Line
+parent: Command Line
 layout: default
-nav_order: 2
+nav_order: 10
 ---
 
 # My Command Line Setup
@@ -93,7 +93,9 @@ more modern alternative that's supposed to give a nicer user experience is
 [**zellij**](https://zellij.dev/), which primarily calls itself a "terminal
 workspace" but has some tmux-like functionalities (like detaching a session).
 
-### The shell: fish
+- - -
+
+## The shell: fish
 
 The default shell on most Linux systems is the [Bash
 shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), and you can't go wrong
@@ -101,7 +103,9 @@ with learning how to use it. However, I made the switch to
 [**fish**](https://fishshell.com/) a couple of years ago and now I never want to
 use anything else.
 
-What's nice about the [fish shell](https://fishshell.com/) is that it offers autosuggestions, tab completions, syntax highlighting, and is easy to customize and write scripts for.
+What's nice about the [fish shell](https://fishshell.com/) is that it offers
+autosuggestions, tab completions, syntax highlighting, and is easy to customize
+and write scripts for.
 {: .callout .callout-primary }
 
 Fish can suggest completions for executables, paths, options, and even full
@@ -141,7 +145,7 @@ relevant for writing quick one-liners directly on the command line.
 
 [**fzf** ("fuzzy finder")](https://github.com/junegunn/fzf) is a command-line
 tool for finding things, but also works as an [awesome fish
-extension](https://github.com/jethrokuan/fzf).  It also [comes with built-in
+extension](https://github.com/PatrickF1/fzf.fish).  It also [comes with built-in
 support for bash and
 zsh](https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh), though
 I haven't tried that.

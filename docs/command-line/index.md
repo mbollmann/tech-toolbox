@@ -1,5 +1,5 @@
 ---
-title: Working on the Command Line
+title: Command Line
 layout: default
 nav_order: 2
 has_children: true
