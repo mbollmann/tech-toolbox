@@ -27,9 +27,9 @@ here](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.confi
 | Function                     | Key            |
 |------------------------------|----------------|
 | Search in directory          | `<Ctrl+f>`     |
-| ... then open in editor      | `<Ctrl+e>`     |
-| ... then open with xdg-open  | `<Ctrl+o>`     |
-| ... then toggle preview      | `<Ctrl+t>`     |
+| ... then open in editor      | ... `<Ctrl+e>` |
+| ... then open with xdg-open  | ... `<Ctrl+o>` |
+| ... then toggle preview      | ... `<Ctrl+t>` |
 | Search command history       | `<Ctrl+r>`     |
 | Change into directory        | `<Alt+c>`      |
 | Change into hidden directory | `<Alt+C>`      |
@@ -38,3 +38,9 @@ here](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.confi
 | Search processes             | `<Ctrl+Alt+p>` |
 | Search environment variables | `<Ctrl+v>`     |
 
+Additionally, I built a small extension called [pet.fish](https://github.com/mbollmann/pet.fish) which interacts with the [pet command-line snippet manager](https://github.com/knqyf263/pet) and provides two more keybindings:
+
+| Function        | Key            |
+|-----------------|----------------|
+| Search snippets | `<Ctrl+s>`     |
+| New snippet     | `<Ctrl+Alt+n>` |
