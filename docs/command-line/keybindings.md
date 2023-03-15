@@ -12,35 +12,35 @@ re-configured for myself in [my
 dot-files](https://github.com/mbollmann/linux-essentials), but it might still
 serve as an inspiration for what you can do.
 
-- - -
+### Directories and Files
 
-### fzf (search extension)
+| Function                     | Key            | Plugin                                                                                                                                                                                                  |
+|------------------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| List directory               | `<Alt+l>`      | Core fish functionality                                                                                                                                                                                 |
+| Search in directory          | `<Ctrl+f>`     | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                                                                                                                             |
+| ... then open in editor      | ... `<Ctrl+e>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                                                                                                                             |
+| ... then open with xdg-open  | ... `<Ctrl+o>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                                                                                                                             |
+| ... then toggle preview      | ... `<Ctrl+t>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                                                                                                                             |
+| Change into directory        | `<Alt+c>`      | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) + [custom function](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/fish/functions/__mmb_change_directory.fish) |
+| Change into hidden directory | `<Alt+C>`      | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) + [custom function](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/fish/functions/__mmb_change_directory.fish) |
+| Open Dired                   | `<F5>`         | [mbollmann/emacs.fish](https://github.com/mbollmann/emacs.fish) + Emacs                                                                                                                                 |
 
-These keybindings relate to
-[fzf.fish](https://github.com/PatrickF1/fzf.fish#search-commands), but are
-customized from the default ones in my
-[`config.fish`](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/fish/config.fish). "Change
-into directory" and "Change into hidden directory" require a [custom function
-defined
-here](https://github.com/mbollmann/linux-essentials/blob/master/dot-files/.config/fish/functions/_fzf_mmb_change_directory.fish).
+### Commands and Processes
 
-| Function                     | Key            |
-|------------------------------|----------------|
-| Search in directory          | `<Ctrl+f>`     |
-| ... then open in editor      | ... `<Ctrl+e>` |
-| ... then open with xdg-open  | ... `<Ctrl+o>` |
-| ... then toggle preview      | ... `<Ctrl+t>` |
-| Search command history       | `<Ctrl+r>`     |
-| Change into directory        | `<Alt+c>`      |
-| Change into hidden directory | `<Alt+C>`      |
-| Search git log               | `<Ctrl+Alt+l>` |
-| Search git status            | `<Ctrl+Alt+g>` |
-| Search processes             | `<Ctrl+Alt+p>` |
-| Search environment variables | `<Ctrl+v>`     |
+| Function                       | Key            | Plugin                                                      |
+|--------------------------------|----------------|-------------------------------------------------------------|
+| Search command history         | `<Ctrl+r>`     | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) |
+| Search saved snippets          | `<Ctrl+s>`     | [mbollmann/pet.fish](https://github.com/mbollmann/pet.fish) |
+| Save new snippet               | `<Ctrl+Alt+n>` | [mbollmann/pet.fish](https://github.com/mbollmann/pet.fish) |
+| Comment/uncomment current line | `<Alt+'>`      | Core fish functionality (defaults to `<Alt+#>`)             |
+| Search processes               | `<Ctrl+Alt+p>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) |
+| Search environment variables   | `<Ctrl+v>`     | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) |
 
-Additionally, I built a small extension called [pet.fish](https://github.com/mbollmann/pet.fish) which interacts with the [pet command-line snippet manager](https://github.com/knqyf263/pet) and provides two more keybindings:
 
-| Function        | Key            |
-|-----------------|----------------|
-| Search snippets | `<Ctrl+s>`     |
-| New snippet     | `<Ctrl+Alt+n>` |
+### Git functionality
+
+| Function                 | Key            | Plugin                                                                                              |
+|--------------------------|----------------|-----------------------------------------------------------------------------------------------------|
+| Open Magit status window | `<F4>`         | [mbollmann/emacs.fish](https://github.com/mbollmann/emacs.fish) + Emacs + [Magit](https://magit.vc) |
+| Search git log           | `<Ctrl+Alt+l>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                         |
+| Search git status        | `<Ctrl+Alt+g>` | [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish)                                         |
